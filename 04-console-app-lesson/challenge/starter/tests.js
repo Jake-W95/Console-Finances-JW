@@ -95,13 +95,8 @@ finances = [
 ];
 
 
-// Number of Months
 
-for (i = 0; i < finances.length; i++) {
 
-}
-
-// TOTAL NET +/-
 
 let sum = 0
 let figures = []
@@ -109,14 +104,12 @@ let maxProfit = 0
 let maxLoss = 0
 for (i = 0; i < finances.length; i++) {
     sum += finances[i][1] //38 382 578
-    // maxProfit = Math.max(finances[i][1])
-    figures.push(finances[i][1]) 
+    figures.push(finances[i][1]) //Extracts numbers from 'finances' into seperate array 'figures'
 
 }
 
-sortFigures=figures.sort(function(a, b){return b-a});
-console.log('sorted figures', sortFigures);
-console.log(`Max - ${sortFigures[0]}, Min = ${sortFigures[sortFigures.length-1]}`);
+sortFigures=figures.sort(function(a, b){return b-a}); //Sorts all numbers within 'figures' from max to min
+
 
 
 
@@ -124,10 +117,16 @@ console.log(`Max - ${sortFigures[0]}, Min = ${sortFigures[sortFigures.length-1]}
 // CONSOLE LOGS
 // CONSOLE LOGS
 // CONSOLE LOGS
-console.log('sum' + sum) //SUM
-// console.log('figs', figures) //ARRAY - ONLY NUMBERS
 console.log('total # of Months', i) //TOTAL MONTHS
+console.log('sum' + '+ = $'+sum) //SUM
 
+console.log(`Max - $${sortFigures[0]}, Min = $${sortFigures[sortFigures.length-1]}`); //Displays Max and Min figures
+
+
+
+
+// console.log('figs', figures) //Displays UNsorted 'figures 
+// console.log('sorted figures', sortFigures); //Displays sorted 'figures' in whole
 
 
 
@@ -137,10 +136,10 @@ console.log('total # of Months', i) //TOTAL MONTHS
 
 // !!!!METHOD!!!#
 
-let numbers = [2346, 96, 23478, 958, 200]
-let sortedArray = numbers.sort(function(a, b){return b-a});
-console.log('sorted array', sortedArray);
-console.log(`Max - ${sortedArray[0]}, Min = ${sortedArray[sortedArray.length-1]}`);
+// let numbers = [2346, 96, 23478, 958, 200]
+// let sortedArray = numbers.sort(function(a, b){return b-a});
+// console.log('sorted array', sortedArray);
+// console.log(`Max - ${sortedArray[0]}, Min = ${sortedArray[sortedArray.length-1]}`);
 
 
 
@@ -150,10 +149,6 @@ console.log(`Max - ${sortedArray[0]}, Min = ${sortedArray[sortedArray.length-1]}
 // var test = [867884 + 984655]
 // console.log('test', test)
 
-
-// var maxProfit = 0
-// for (i = 0; i < finances.length; i++) {
-//     }
 
 
 
