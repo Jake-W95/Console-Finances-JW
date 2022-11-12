@@ -100,7 +100,7 @@ finances = [
 for (i = 0; i < finances.length; i++) {
 
 }
-console.log('total # of Months', i)
+
 // TOTAL NET +/-
 
 let sum = 0
@@ -111,16 +111,31 @@ for (i = 0; i < finances.length; i++) {
     sum += finances[i][1] //38 382 578
     // maxProfit = Math.max(finances[i][1])
     figures.push(finances[i][1]) 
+
 }
-console.log('sum' + sum,'\n','max profit' + maxProfit,'\n','max loss' + maxLoss )
 
-console.log('figs', figures)
-// maxLoss = Math.min(finances[i][1])
-// console.log('minTest', Math.min(finances[i][1]))
-
+sortFigures=figures.sort(function(a, b){return b-a});
+console.log('sorted figures', sortFigures);
+console.log(`Max - ${sortFigures[0]}, Min = ${sortFigures[sortFigures.length-1]}`);
 
 
-// DISPLAY AND SORT MAX - MIN #
+
+
+// CONSOLE LOGS
+// CONSOLE LOGS
+// CONSOLE LOGS
+console.log('sum' + sum) //SUM
+// console.log('figs', figures) //ARRAY - ONLY NUMBERS
+console.log('total # of Months', i) //TOTAL MONTHS
+
+
+
+
+// !!!!METHOD!!!#
+
+// DISPLAY AND SORT MAX - MIN  
+
+// !!!!METHOD!!!#
 
 let numbers = [2346, 96, 23478, 958, 200]
 let sortedArray = numbers.sort(function(a, b){return b-a});
