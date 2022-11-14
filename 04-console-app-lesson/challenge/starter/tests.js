@@ -101,20 +101,34 @@ finances = [
 let sum = 0
 
 let maxProfit = 0
+let maxLoss
 var dateMaxProfit = [,]
 let i = 0
-let temp2 = 0
+let tempProf = 0
+let tempLoss = 0
 //Variables
 
 for (; i < finances.length; i++) {
     sum += finances[i][1]; //38 382 578
 
+    //Find Max Profit in 'finances'
     finances[i].forEach(element => {
-        if (temp2 < element) {
-            temp2 = element;
+        if (tempProf < element ) {
+            tempProf = element;
         }
     });
-    console.log('test2', temp2)
+    //CONSOLE LOG showing tempProf increasing through the Loop
+    // console.log('Max', tempProf) 
+
+
+    finances[i].forEach(element => {
+        if (tempLoss > element) {
+            tempLoss = element;
+        }
+    });
+
+
+
 
     // if (finances[i][1] === 1170593) {
     //     dateMaxProfit = finances[i]
@@ -122,11 +136,12 @@ for (; i < finances.length; i++) {
     // }
 }
 
-maxProfit = temp2
-console.log(maxProfit, 'maxProfit')
+maxProfit = tempProf
+maxLoss = tempLoss
+console.log(maxProfit, 'max Profit')
+console.log(maxLoss, 'Max Loss')
    
 
-console.log(maxProfit, 'max profit test')
 
 // CONSOLE LOGS
 // CONSOLE LOGS
@@ -160,13 +175,14 @@ console.log('sum' + ' = $' + sum) //SUM
 
 
 
+// Highest '# in Nested Array\\
 
-let arr = [[4, 5], [6, 7], [8, 9, 10]];
-temp = 0;
+// let arr = [[4, 5], [6, 7], [8, 9, 10]];
+// temp = 0;
 
-arr[2].forEach((element) => {
-    if (temp < element) {
-        temp = element;
-    }
-});
-console.log('please work', temp)
+// arr[2].forEach((element) => {
+//     if (temp < element) {
+//         temp = element;
+//     }
+// });
+// console.log('please work', temp)
