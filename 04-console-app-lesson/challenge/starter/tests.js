@@ -9,8 +9,8 @@ finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
     ['Mar-2010', 322013],
-    ['Apr-2010', -69417],
-    ['May-2010', 310503],
+    ['Apr-2010', -69417], //A
+    ['May-2010', 310503], //B
     ['Jun-2010', 522857],
     ['Jul-2010', 1033096],
     ['Aug-2010', 604885],
@@ -116,7 +116,7 @@ for (; i < finances.length; i++) {
 
     //Find Max Profit in 'finances'
     finances[i].forEach(element => {
-        if (tempProf < element ) {
+        if (tempProf < element) {
             tempProf = element;
         }
     });
@@ -128,12 +128,24 @@ for (; i < finances.length; i++) {
         }
     });
 
+    // Function to add (+) 
     function diff(element1, element2) {
-        
-        return element1 + element2;
-        
+        if (element1 < 0 && element2 >= 0) {
+            element1 = element1 * -1;
+            return element1 + element2;
+        } else if (element1 >= 0 && element2 < 0) {
+            element2 = element2 * -1;
+            return (element1 + element2) * -1;
+        } else if (element1 > element2) {
+            return element1 - element2;
+        } else if (element1 < element2) {
+            return element2 - element1;
+
+
+        }
+
     }
-    console.log(diff(finances[i][1], finances[i+1][1]), 'differences')
+    console.log(diff(finances[i + 1][1], finances[i][1]), 'differences')
 }
 
 // dateMaxLoss = finances[k]
@@ -145,12 +157,12 @@ maxProfit = tempProf
 maxLoss = tempLoss
 
 
-for (j = 0; finances[j][1] != maxProfit;){
+for (j = 0; finances[j][1] != maxProfit;) {
     j++;
     dateMaxProfit = finances[j]
 }
 
-for (k = 0; finances[k][1] != maxLoss;){
+for (k = 0; finances[k][1] != maxLoss;) {
     k++;
     dateMaxLoss = finances[k]
 }
@@ -162,7 +174,7 @@ console.log(maxProfit, 'max Profit')
 console.log(maxLoss, 'Max Loss')
 console.log('Greates Increase in Profits', ' ', dateMaxProfit)
 console.log('Greates Decrease in Profits:', ' ', dateMaxLoss)
-   
+
 
 
 // CONSOLE LOGS
@@ -208,3 +220,12 @@ console.log('sum' + ' = $' + sum) //SUM
 //     }
 // });
 // console.log('please work', temp)
+
+
+
+
+// var answer = (-2 * -1) + 2
+// console.log(answer, 'answer')
+
+
+
