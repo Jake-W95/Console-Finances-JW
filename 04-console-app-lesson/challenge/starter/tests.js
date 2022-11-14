@@ -131,14 +131,21 @@ for (; i < finances.length; i++) {
 
 
 
-//Not working yet
-    finances.forEach(element => {
-        if (finances[i][1] === maxProfit) {
-            dateMaxProfitTemp = element
-        }
+// Not working yet
+    // finances.forEach(element => {
+    //     if (finances.hasOwn(maxProfit)) {
+    //         dateMaxProfitTemp = element
+    //     }
         
-    });
+    // });
 }
+
+for (j = 0; finances[j][1] === maxProfit; j++){
+    
+}
+console.log(finances[j])
+
+
 
 maxProfit = tempProf
 maxLoss = tempLoss
