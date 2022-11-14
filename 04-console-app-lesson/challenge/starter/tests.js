@@ -103,7 +103,7 @@ let sum = 0
 let maxProfit = 0
 let maxLoss
 var dateMaxProfit = [,]
-var dateMaxProfitTemp = []
+var dateMaxLoss = [,]
 
 let i = 0
 let tempProf = 0
@@ -140,19 +140,30 @@ for (; i < finances.length; i++) {
     // });
 }
 
-for (j = 0; finances[j][1] === maxProfit; j++){
-    
-}
-console.log(finances[j])
+// dateMaxLoss = finances[k]
 
 
 
 maxProfit = tempProf
 maxLoss = tempLoss
-dateMaxProfit = dateMaxProfitTemp
+
+
+// DATE MAX PROFIT ARRAY 
+
+for (j = 0; finances[j][1] != maxProfit;){
+    j++;
+    dateMaxProfit = finances[j]
+}
+
+for (k = 0; finances[k][1] != maxLoss;){
+    k++;
+    dateMaxLoss = finances[k]
+}
+
 console.log(maxProfit, 'max Profit')
 console.log(maxLoss, 'Max Loss')
-console.log(dateMaxProfit, 'DMP')
+console.log(dateMaxProfit, 'DATE MAX PROFIT')
+console.log(dateMaxLoss, 'Date Max Loss')
    
 
 
