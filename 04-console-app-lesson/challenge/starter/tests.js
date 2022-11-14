@@ -104,50 +104,68 @@ let maxProfit = 0
 let maxLoss
 var dateMaxProfit = [,]
 var dateMaxLoss = [,]
-
+let sumPass = []
+let sumHold = []
 let i = 0
 let tempProf = 0
 let tempLoss = 0
-
+let financeI = [finances[i][1]]
+let financeII = [finances[i+1][1]]
 //Variables
 
 for (; i < finances.length; i++) {
+    
     sum += finances[i][1]; //38 382 578
-
     //Find Max Profit in 'finances'
     finances[i].forEach(element => {
         if (tempProf < element) {
             tempProf = element;
         }
     });
-
     //Find Max Loss in 'finances'
     finances[i].forEach(element => {
         if (tempLoss > element) {
             tempLoss = element;
         }
     });
+    // Function to add (+) elements
+    
 
-    // Function to add (+) 
     function diff(element1, element2) {
         if (element1 < 0 && element2 >= 0) {
             element1 = element1 * -1;
+            
             return element1 + element2;
         } else if (element1 >= 0 && element2 < 0) {
             element2 = element2 * -1;
+            
             return (element1 + element2) * -1;
         } else if (element1 > element2) {
+            
             return element1 - element2;
         } else if (element1 < element2) {
+            
             return element2 - element1;
-
-
         }
-
+        
+        // sumHold.push(diff(financeII, financeI));
+       
     }
-    console.log(diff(finances[i + 1][1], finances[i][1]), 'differences')
+    sumPass.push(diff(finances[i+1][1], finances[i][1]))
+    console.log(sumPass[i], 'sumPass')
+    // console.log(diff(financeII, financeI), 'diff log')
+// sumHold.push(sumPass)
+    
+
+
+    // sumHold = diff(finances[i + 1][1], finances[i][1])    
+
+    
 }
 
+
+// sumHold.push(diff)
+console.log(sumHold, 'sumHold')
 // dateMaxLoss = finances[k]
 
 
