@@ -103,6 +103,8 @@ let sum = 0
 let maxProfit = 0
 let maxLoss
 var dateMaxProfit = [,]
+var dateMaxProfitTemp = []
+
 let i = 0
 let tempProf = 0
 let tempLoss = 0
@@ -120,7 +122,7 @@ for (; i < finances.length; i++) {
     //CONSOLE LOG showing tempProf increasing through the Loop
     // console.log('Max', tempProf) 
 
-
+    //Find Max Loss in 'finances'
     finances[i].forEach(element => {
         if (tempLoss > element) {
             tempLoss = element;
@@ -129,17 +131,21 @@ for (; i < finances.length; i++) {
 
 
 
-
-    // if (finances[i][1] === 1170593) {
-    //     dateMaxProfit = finances[i]
-    //     console.log(dateMaxProfit, 'dateMaxProfit')
-    // }
+//Not working yet
+    finances.forEach(element => {
+        if (finances[i][1] === maxProfit) {
+            dateMaxProfitTemp = element
+        }
+        
+    });
 }
 
 maxProfit = tempProf
 maxLoss = tempLoss
+dateMaxProfit = dateMaxProfitTemp
 console.log(maxProfit, 'max Profit')
 console.log(maxLoss, 'Max Loss')
+console.log(dateMaxProfit, 'DMP')
    
 
 
