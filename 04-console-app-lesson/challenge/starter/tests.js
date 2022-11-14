@@ -108,6 +108,7 @@ var dateMaxLoss = [,]
 let i = 0
 let tempProf = 0
 let tempLoss = 0
+
 //Variables
 
 for (; i < finances.length; i++) {
@@ -119,8 +120,6 @@ for (; i < finances.length; i++) {
             tempProf = element;
         }
     });
-    //CONSOLE LOG showing tempProf increasing through the Loop
-    // console.log('Max', tempProf) 
 
     //Find Max Loss in 'finances'
     finances[i].forEach(element => {
@@ -129,26 +128,22 @@ for (; i < finances.length; i++) {
         }
     });
 
-
-
-// Not working yet
-    // finances.forEach(element => {
-    //     if (finances.hasOwn(maxProfit)) {
-    //         dateMaxProfitTemp = element
-    //     }
+    function diff(element1, element2) {
         
-    // });
+        return element1 + element2;
+        
+    }
+    console.log(diff(finances[i][1], finances[i+1][1]), 'differences')
 }
 
 // dateMaxLoss = finances[k]
 
 
+// DATE MAX PROFIT/LOSS __START__ 
 
 maxProfit = tempProf
 maxLoss = tempLoss
 
-
-// DATE MAX PROFIT ARRAY 
 
 for (j = 0; finances[j][1] != maxProfit;){
     j++;
@@ -160,10 +155,13 @@ for (k = 0; finances[k][1] != maxLoss;){
     dateMaxLoss = finances[k]
 }
 
+// DATE MAX PROFIT/LOSS __END__
+
+
 console.log(maxProfit, 'max Profit')
 console.log(maxLoss, 'Max Loss')
-console.log(dateMaxProfit, 'DATE MAX PROFIT')
-console.log(dateMaxLoss, 'Date Max Loss')
+console.log('Greates Increase in Profits', ' ', dateMaxProfit)
+console.log('Greates Decrease in Profits:', ' ', dateMaxLoss)
    
 
 
