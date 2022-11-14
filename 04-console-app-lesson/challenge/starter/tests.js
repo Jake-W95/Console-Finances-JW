@@ -97,42 +97,52 @@ finances = [
 
 
 
-
+//Blank Variables
 let sum = 0
-let figures = []
-let maxProfit = 0 
-let maxLoss = 0
-for (i = 0; i < finances.length; i++) {
-    sum += finances[i][1] //38 382 578
-    figures.push(finances[i][1]) //Extracts numbers from 'finances' into seperate array 'figures'
 
+let maxProfit = 0
+var dateMaxProfit = [,]
+let i = 0
+let temp2 = 0
+//Variables
+
+for (; i < finances.length; i++) {
+    sum += finances[i][1]; //38 382 578
+
+    finances[i].forEach(element => {
+        if (temp2 < element) {
+            temp2 = element;
+        }
+    });
+    console.log('test2', temp2)
+
+    // if (finances[i][1] === 1170593) {
+    //     dateMaxProfit = finances[i]
+    //     console.log(dateMaxProfit, 'dateMaxProfit')
+    // }
 }
 
-sortFigures=figures.sort(function(a, b){return b-a}); //Sorts all numbers within 'figures' from max to min
+maxProfit = temp2
+console.log(maxProfit, 'maxProfit')
+   
 
+console.log(maxProfit, 'max profit test')
 
-
-
-
-// CONSOLE LOGS
 // CONSOLE LOGS
 // CONSOLE LOGS
 console.log('total # of Months', i) //TOTAL MONTHS
-console.log('sum' + '+ = $'+sum) //SUM
-
-console.log(`Max - $${sortFigures[0]}, Min = $${sortFigures[sortFigures.length-1]}`); //Displays Max and Min figures
+console.log('sum' + ' = $' + sum) //SUM
 
 
 
 
-// console.log('figs', figures) //Displays UNsorted 'figures 
-// console.log('sorted figures', sortFigures); //Displays sorted 'figures' in whole
+
 
 
 
 // !!!!METHOD!!!#
 
-// DISPLAY AND SORT MAX - MIN  
+// DISPLAY AND SORT MAX - MIN
 
 // !!!!METHOD!!!#
 
@@ -141,13 +151,9 @@ console.log(`Max - $${sortFigures[0]}, Min = $${sortFigures[sortFigures.length-1
 // console.log('sorted array', sortedArray);
 // console.log(`Max - ${sortedArray[0]}, Min = ${sortedArray[sortedArray.length-1]}`);
 
+//MAX MIN MAX MIN MAX MIN \\\
 
-
-
-
-
-// var test = [867884 + 984655]
-// console.log('test', test)
+// console.log(`Max = $${sortFigures[0]}, Min = -$${sortFigures[sortFigures.length - 1]}`); //Displays Max and Min figures//  !!!REDUNDANT!!!  \\\
 
 
 
@@ -155,4 +161,12 @@ console.log(`Max - $${sortFigures[0]}, Min = $${sortFigures[sortFigures.length-1
 
 
 
+let arr = [[4, 5], [6, 7], [8, 9, 10]];
+temp = 0;
 
+arr[2].forEach((element) => {
+    if (temp < element) {
+        temp = element;
+    }
+});
+console.log('please work', temp)
