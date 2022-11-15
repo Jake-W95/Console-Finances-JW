@@ -5,6 +5,7 @@
 // Test Script
 // Test Script
 
+//DATA
 finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
@@ -94,43 +95,23 @@ finances = [
     ['Feb-2017', 671099]
 ];
 
-
-
-
 //Blank Variables
 let sum = 0
-
+let diffSum = 0
+let average$ = 0
 let maxProfit = 0
-let maxLoss
+let maxLoss = 0
 var dateMaxProfit = [,]
 var dateMaxLoss = [,]
 let sumPass = []
 let sumHold = []
-let i = 0
+
+
 let tempProf = 0
 let tempLoss = 0
-let financeI = [finances[i][1]]
-let financeII = [finances[i+1][1]]
+
 //Variables
-
-for (; i < finances.length; i++) {
-    
-    sum += finances[i][1]; //38 382 578
-    //Find Max Profit in 'finances'
-    finances[i].forEach(element => {
-        if (tempProf < element) {
-            tempProf = element;
-        }
-    });
-    //Find Max Loss in 'finances'
-    finances[i].forEach(element => {
-        if (tempLoss > element) {
-            tempLoss = element;
-        }
-    });
     // Function to add (+) elements
-    
-
     function diff(element1, element2) {
         if (element1 < 0 && element2 >= 0) {
             element1 = element1 * -1;
@@ -151,30 +132,42 @@ for (; i < finances.length; i++) {
         // sumHold.push(diff(financeII, financeI));
        
     }
-    sumPass.push(diff(finances[i+1][1], finances[i][1]))
-    console.log(sumPass[i], 'sumPass')
-    // console.log(diff(financeII, financeI), 'diff log')
-// sumHold.push(sumPass)
+
+//Primary Loop
+for (i = 0; i < finances.length-1; i++) {
     
-
-
-    // sumHold = diff(finances[i + 1][1], finances[i][1])    
-
-    
+    sum += finances[i][1]; //38 382 578
+    //Find Max Profit in 'finances'
+    finances[i].forEach(element => {
+        if (tempProf < element) {
+            tempProf = element;
+        }
+    });
+    //Find Max Loss in 'finances'
+    finances[i].forEach(element => {
+        if (tempLoss > element) {
+            tempLoss = element;
+        }
+    });
+        sumHold.push(diff(finances[i+1][1], finances[i][1]))
+         
 }
 
 
-// sumHold.push(diff)
-console.log(sumHold, 'sumHold')
-// dateMaxLoss = finances[k]
+//Sum of all differences
+diffSum = sumHold.reduce((a, b) => a + b, 0);
+
+average$ = (diffSum / i).toFixed(2);
+console.log(average$, 'Average of difference')
 
 
-// DATE MAX PROFIT/LOSS __START__ 
 
+
+
+
+// DATE MAX PROFIT/LOSS __START_SOURCE__ 
 maxProfit = tempProf
 maxLoss = tempLoss
-
-
 for (j = 0; finances[j][1] != maxProfit;) {
     j++;
     dateMaxProfit = finances[j]
@@ -184,19 +177,14 @@ for (k = 0; finances[k][1] != maxLoss;) {
     k++;
     dateMaxLoss = finances[k]
 }
+// DATE MAX PROFIT/LOSS __END-SOURCE__
 
-// DATE MAX PROFIT/LOSS __END__
-
-
-console.log(maxProfit, 'max Profit')
-console.log(maxLoss, 'Max Loss')
+// CONSOLE LOGS
+// CONSOLE LOGS
+// console.log(maxProfit, 'max Profit')
+// console.log(maxLoss, 'Max Loss')
 console.log('Greates Increase in Profits', ' ', dateMaxProfit)
 console.log('Greates Decrease in Profits:', ' ', dateMaxLoss)
-
-
-
-// CONSOLE LOGS
-// CONSOLE LOGS
 console.log('total # of Months', i) //TOTAL MONTHS
 console.log('sum' + ' = $' + sum) //SUM
 
