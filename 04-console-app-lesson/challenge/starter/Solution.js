@@ -147,7 +147,7 @@ for (j = 0; finances[j][1] != maxProfit; j++) {
     dateMaxProfit = JSON.stringify(finances[j])
 }
 for (k = 0; finances[k][1] != maxLoss; k++) {
-    dateMaxLoss = finances[k]
+    dateMaxLoss = JSON.stringify(finances[k])
 }
 
 //CONSOLE.LOG\\
