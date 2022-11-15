@@ -4,8 +4,8 @@ finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
     ['Mar-2010', 322013],
-    ['Apr-2010', -69417], 
-    ['May-2010', 310503], 
+    ['Apr-2010', -69417],
+    ['May-2010', 310503],
     ['Jun-2010', 522857],
     ['Jul-2010', 1033096],
     ['Aug-2010', 604885],
@@ -97,19 +97,36 @@ let dateMaxProfit, datemaxLoss, sumPass, sumHold;
 dateMaxProfit = datemaxLoss = sumPass = sumHold = [];
 
 //FUNCTION\\
-//Addition function to be recalled later in the code\\
-function diff(element1, element2){
-    if (element1 < 0 && element2 >= 0){
+//Function that calculates difference in 2 numbers to be recalled later in the code\\
+function diff(element1, element2) {
+    if (element1 < 0 && element2 >= 0) {
         element1 = element1 * -1;
         return element1 + element2;
     } else if (element1 >= 0 && element2 < 0) {
         element2 = element2 * -1;
         return (element1 + element2) * -1;
-    } else if (element1 > element2){
+    } else if (element1 > element2) {
         element1 - element2;
-    } else if (element1 < element2){
+    } else if (element1 < element2) {
         return element2 - element1;
     }
 }
 
 //PRIMARY LOOP\\
+for (i = 0; i < finances.length - 1; i++) {
+    //Sums all figures in the 'finances' array
+    sum += finances[i][1];
+    //The code beneath cycles through the figures in 'finances',
+    //replacing 'tempProf' with any nunmber it encounters higher than itsself
+    finances[i].forEach(element => {
+        if (tempProf < element) {
+            tempProf = element;
+        }
+    });
+    //See above (but for any number lower than itsself)
+    finances[i].array.forEach(element => {
+        if (tempLoss > element);{
+        tempLoss = element;
+        }
+    });
+}
