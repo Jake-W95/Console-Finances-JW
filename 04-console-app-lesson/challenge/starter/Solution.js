@@ -1,4 +1,5 @@
 // SOLUTION
+// MAIN DATA ARRAY
 finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
@@ -87,3 +88,28 @@ finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
+//BLANK VARIABLES\\
+//The lines beneath apply the same value to multiple variables\\
+let sum, diffSum, average$, maxProfit, maxLoss, tempProf, tempLoss;
+sum = diffSum = average$ = maxProfit = maxLoss = tempProf = tempLoss = 0;
+
+let dateMaxProfit, datemaxLoss, sumPass, sumHold;
+dateMaxProfit = datemaxLoss = sumPass = sumHold = [];
+
+//FUNCTION\\
+//Addition function to be recalled later in the code\\
+function diff(element1, element2){
+    if (element1 < 0 && element2 >= 0){
+        element1 = element1 * -1;
+        return element1 + element2;
+    } else if (element1 >= 0 && element2 < 0) {
+        element2 = element2 * -1;
+        return (element1 + element2) * -1;
+    } else if (element1 > element2){
+        element1 - element2;
+    } else if (element1 < element2){
+        return element2 - element1;
+    }
+}
+
+//PRIMARY LOOP\\
