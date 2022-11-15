@@ -106,7 +106,7 @@ function diff(element1, element2) {
         element2 = element2 * -1;
         return (element1 + element2) * -1;
     } else if (element1 > element2) {
-        element1 - element2;
+        return element1 - element2;
     } else if (element1 < element2) {
         return element2 - element1;
     }
@@ -125,8 +125,8 @@ for (i = 0; i < finances.length - 1; i++) {
     });
     //See above (but for any number lower than itsself)
     finances[i].forEach(element => {
-        if (tempLoss > element);{
-        tempLoss = element;
+        if (tempLoss > element); {
+            tempLoss = element;
         }
     });
     //The push below moves the results from the "diff" function into the "sumHold" variable
@@ -136,6 +136,7 @@ for (i = 0; i < finances.length - 1; i++) {
 //The line below sums all of the figures in "sumHold" and stores the value in diffSum
 //Credit to https://whaa.dev/how-to-add-all-numbers-in-an-array-javascript
 diffSum = sumHold.reduce((a, b) => a + b, 0);
+// console.log(sumHold, 'sumHold')
 //The code below divides the sum of all changes by the total number of months recorded, the answer is then rounded to the nearest 2 decimal places
 average$ = (diffSum / i).toFixed(2);
 
@@ -159,3 +160,4 @@ console.log(
     'Average Change:' + ' $' + average$, '\n',
     'Greates Increase in Profits', ' ', dateMaxProfit, '\n',
     'Greates Decrease in Profits:', ' ', dateMaxLoss)
+
