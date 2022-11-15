@@ -158,6 +158,6 @@ console.log(
     'Total months:' + ' ' + i, '\n',
     'Total:' + ' $' + sum, '\n',
     'Average Change:' + ' $' + average$, '\n',
-    'Greates Increase in Profits', ' ', dateMaxProfit, '\n',
-    'Greates Decrease in Profits:', ' ', dateMaxLoss)
+    'Greatest Increase in Profits', ' ', dateMaxProfit, '\n',
+    'Greatest Decrease in Profits:', ' ', dateMaxLoss)
 
