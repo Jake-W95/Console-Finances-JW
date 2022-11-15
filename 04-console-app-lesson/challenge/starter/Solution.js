@@ -93,8 +93,8 @@ finances = [
 let sum, diffSum, average$, maxProfit, maxLoss, tempProf, tempLoss;
 sum = diffSum = average$ = maxProfit = maxLoss = tempProf = tempLoss = 0;
 
-let dateMaxProfit, datemaxLoss, sumPass, sumHold;
-dateMaxProfit = datemaxLoss = sumPass = sumHold = [];
+let dateMaxProfit, dateMaxLoss, sumPass, sumHold;
+dateMaxProfit = dateMaxLoss = sumPass = sumHold = [];
 
 //FUNCTION\\
 //Function that calculates difference in 2 numbers to be recalled later in the code\\
@@ -124,9 +124,38 @@ for (i = 0; i < finances.length - 1; i++) {
         }
     });
     //See above (but for any number lower than itsself)
-    finances[i].array.forEach(element => {
+    finances[i].forEach(element => {
         if (tempLoss > element);{
         tempLoss = element;
         }
     });
+    //The push below moves the results from the "diff" function into the "sumHold" variable
+    sumHold.push(diff(finances[i+1][1], finances[i][1]))
 }
+//AVERAGE CALCULATION\\
+//The line below sums all of the figures in "sumHold" and stores the value in diffSum
+//Credit to https://whaa.dev/how-to-add-all-numbers-in-an-array-javascript
+diffSum = sumHold.reduce((a, b) => a + b, 0);
+//The code below divides the sum of all changes by the total number of months recorded, the answer is then rounded to the nearest 2 decimal places
+average$ = (diffSum / i).toFixed(2);
+
+//GREATEST INC/DEC\\
+maxProfit = tempProf
+maxLoss = tempLoss
+//IN TESTS THESE LOOPS DID NOT FUNCTION WHILE j/k++ were in the condition, they had to be moved into the block!
+for (j = 0; finances[j][1] != maxProfit; j++) {
+    dateMaxProfit = JSON.stringify(finances[j])
+}
+for (k = 0; finances[k][1] != maxLoss; k++) {
+    dateMaxLoss = finances[k]
+}
+
+//CONSOLE.LOG\\
+console.log(
+    'Financial Analysis', '\n',
+    '----------------------------', '\n',
+    'Total months:' + ' ' + i, '\n',
+    'Total:' + ' $' + sum, '\n',
+    'Average Change:' + ' $' + average$, '\n',
+    'Greates Increase in Profits', ' ', dateMaxProfit, '\n',
+    'Greates Decrease in Profits:', ' ', dateMaxLoss)
